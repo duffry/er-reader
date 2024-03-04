@@ -82,6 +82,28 @@ def find_save_files(directory, filename="ER0000.sl2"):
                 matches.append(os.path.join(root, file))
     return matches
 
+import json
+
+def restructure_data(input_path, output_path):
+    with open(input_path, 'r') as file:
+        data = json.load(file)
+    
+    # New structure: saves > characters > name > file_path > [details]
+    new_structure = {}
+    
+    for save in data['saves']:
+        file_path = save['file_path']
+        for character in save['data']['characters']:
+            name = character['name']
+            if name not in new_structure:
+                new_structure[name] = []
+            character_detail = character.copy()
+            character_detail['file_path'] = file_path
+            del character_detail['name']  # Remove name as it's now a key
+            new_structure[name].append(character_detail)
+    
+    with open(output_path, 'w') as file:
+        json.dump(new_structure, file, indent=4)
 
 if __name__ == "__main__":
     directory_path = "./Backups"  # Ensure this is the correct path
@@ -91,8 +113,12 @@ if __name__ == "__main__":
     print(save_files)
     all_save_data = {"saves": []}  # Modified to include file path
 
+    
+    i = 0
+    num_files = len(save_files)
     for file_path in save_files:
-        print(file_path)
+        i += 1
+        print(f'{i}/{num_files} - {file_path}')
         save_data = {
             "file_path": file_path,
             "data": parse_save_file(file_path)  # Store the return of parse_save_file
@@ -102,3 +128,5 @@ if __name__ == "__main__":
     export_to_json(all_save_data, output_path)
     print(f"Data from {len(save_files)} save files exported to {output_path}")
 
+    structured_data_path = "structured_data.json"
+    restructure_data(output_path, structured_data_path)

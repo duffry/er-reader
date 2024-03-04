@@ -1,34 +1,73 @@
 // Placeholder for currentSortColumn initialization
 let currentSortColumn = ""; // To be set dynamically based on data
 let currentSortOrder = "asc"; // Default sort order remains the same
+let globalData = []; // Global variable to store the table data for sorting
 
 function fetchDataAndDisplay() {
     fetch('structured_data.json')
         .then(response => response.json())
         .then(data => {
-            const tableData = [];
+            const groupedData = {};
 
+            // Group data by character name
             Object.keys(data).forEach(name => {
-                const characters = data[name];
-    
-                // Since we're always including min and max levels as separate columns,
-                // there's no need to check if minLevel === maxLevel
+                data[name].forEach(character => {
+                    if (!groupedData[name]) {
+                        groupedData[name] = [];
+                    }
+                    groupedData[name].push(character);
+                });
+            });
+
+            const tableData = Object.keys(groupedData).map(name => {
+                const characters = groupedData[name];
+
+                // Determine Min and Max Level across all instances
                 const levels = characters.map(character => character.level);
                 const minLevel = Math.min(...levels);
                 const maxLevel = Math.max(...levels);
-    
-                // Add an object for each character to the tableData array
-                tableData.push({ "Name": name, "Min Level": minLevel, "Max Level": maxLevel });
+
+                // Find the instance with the highest level for Primary and Secondary stats, Play Time, and FilePath
+                const highestLevelInstance = characters.reduce((prev, current) => 
+                    (prev.level > current.level) ? prev : current, characters[0]);
+                const statsEntries = Object.entries(highestLevelInstance.stats).sort((a, b) => b[1] - a[1]);
+                const primaryStat = statsEntries[0] ? statsEntries[0][0] : "N/A";
+                const secondaryStat = statsEntries[1] ? statsEntries[1][0] : "N/A";
+                const playTime = highestLevelInstance.play_time; // Play Time of the highest level instance
+
+                // Modify the file_path string to replace "\\" with " > "
+                const filePath = shorten_filepath_string(highestLevelInstance.file_path.replace(/\\/g, " > "));
+
+                return {
+                    "Name": name,
+                    "Min Level": minLevel,
+                    "Max Level": maxLevel,
+                    "Primary Stat": primaryStat,
+                    "Secondary Stat": secondaryStat,
+                    "Play Time": playTime, // Adding Play Time to the table data
+                    "File Path": filePath // Adding modified File Path to the table data
+                };
             });
-            
+
             if (tableData.length > 0) {
-                // Dynamically set the currentSortColumn to the first key of the first item
-                currentSortColumn = Object.keys(tableData[0])[0];
+                currentSortColumn = Object.keys(tableData[0])[0]; // Dynamically set the initial sort column
             }
 
-            globalData = tableData; // Store processed data for sorting and display
-            sortAndDisplayData(); // Initial sort (by the first column) and display
+            globalData = tableData;
+            sortAndDisplayData(); // Initial sort and display
         });
+}
+
+function shorten_filepath_string(filePath){
+    const root_folder = "Backups";
+    // Split the path into an array
+    const parts = filePath.split(" > ");
+    // Find the index of the variable
+    const index = parts.indexOf(root_folder);
+    // Slice the array to get parts after the variable and remove the last element
+    const relevantParts = parts.slice(index + 1, -1);
+    // Join the parts back into a string
+    return relevantParts.join(" > ");
 }
 
 function displayDynamicTable(data) {
@@ -72,7 +111,7 @@ function displayDynamicTable(data) {
     container.appendChild(table);
 }
 
-function sortAndDisplayData(sortColumn) {
+function sortAndDisplayData(sortColumn = currentSortColumn) {
     if (currentSortColumn === sortColumn) {
         // Toggle sort order if the same column is selected
         currentSortOrder = currentSortOrder === "asc" ? "desc" : "asc";
