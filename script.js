@@ -174,13 +174,46 @@ function displaySaveDetails(characterName, timestamp) {
             const displayContainer = document.getElementById('displayContainer');
             if (displayContainer) {
                 // Clear previous content and use a <pre> element for formatted JSON
-                displayContainer.innerHTML = ''; // Clear any previous content
+                displayContainer.innerHTML = '<h2>Base data</h2>'; // Clear any previous content
                 const preElement = document.createElement('pre');
                 preElement.style.color = 'inherit'; // Ensures the pre element text color matches the container
                 preElement.textContent = JSON.stringify(saveInstance, null, 2); // Beautify and set JSON
                 displayContainer.appendChild(preElement); // Add the pre element with JSON to the container
             } else {
                 console.error('Display container not found');
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching structured_data.json:', error);
+        });
+
+        fetch('inventory.json')
+        .then(response => response.json())
+        .then(data => {
+            // Find the specific character data and save instance by timestamp
+            const characterData = data[characterName];
+            if (!characterData) {
+                console.error('Character data not found (inventory)');
+                return;
+            }
+            const saveInstance = characterData[timestamp];
+            if (!saveInstance) {
+                console.error('Save instance not found (inventory)');
+                return;
+            }
+
+            // Ensure the display container exists and is ready for content
+            const displayContainer = document.getElementById('displayContainer');
+            if (displayContainer) {
+                const h2Element = document.createElement('h2');
+                h2Element.textContent = 'Inventory'
+                displayContainer.appendChild(h2Element);
+                const preElement = document.createElement('pre');
+                preElement.style.color = 'inherit'; // Ensures the pre element text color matches the container
+                preElement.textContent = JSON.stringify(saveInstance, null, 2); // Beautify and set JSON
+                displayContainer.appendChild(preElement); // Add the pre element with JSON to the container
+            } else {
+                console.error('Display container not found (inventory)');
             }
         })
         .catch(error => {
