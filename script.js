@@ -4,50 +4,18 @@ let currentSortOrder = "asc"; // Default sort order remains the same
 let globalData = []; // Global variable to store the table data for sorting
 
 function fetchDataAndDisplay() {
-    fetch('structured_data.json')
+    fetch('character_list.json')
         .then(response => response.json())
         .then(data => {
-            const groupedData = {};
-
-            // Group data by character name
-            Object.keys(data).forEach(name => {
-                data[name].forEach(character => {
-                    if (!groupedData[name]) {
-                        groupedData[name] = [];
-                    }
-                    groupedData[name].push(character);
-                });
-            });
-
-            const tableData = Object.keys(groupedData).map(name => {
-                const characters = groupedData[name];
-
-                // Determine Min and Max Level across all instances
-                const levels = characters.map(character => character.level);
-                const minLevel = Math.min(...levels);
-                const maxLevel = Math.max(...levels);
-
-                // Find the instance with the highest level for Primary and Secondary stats, Play Time, and FilePath
-                const highestLevelInstance = characters.reduce((prev, current) => 
-                    (prev.level > current.level) ? prev : current, characters[0]);
-                const statsEntries = Object.entries(highestLevelInstance.stats).sort((a, b) => b[1] - a[1]);
-                const primaryStat = statsEntries[0] ? statsEntries[0][0] : "N/A";
-                const secondaryStat = statsEntries[1] ? statsEntries[1][0] : "N/A";
-                const playTime = highestLevelInstance.play_time; // Play Time of the highest level instance
-
-                // Modify the file_path string to replace "\\" with " > "
-                const filePath = shorten_filepath_string(highestLevelInstance.file_path.replace(/\\/g, " > "));
-
-                return {
-                    "Name": name,
-                    "Min Level": minLevel,
-                    "Max Level": maxLevel,
-                    "Primary Stat": primaryStat,
-                    "Secondary Stat": secondaryStat,
-                    "Play Time": playTime, // Adding Play Time to the table data
-                    "File Path": filePath // Adding modified File Path to the table data
-                };
-            });
+            const tableData = data.map(character => ({
+                "Name": character.Name,
+                "Min Level": character["Min Level"],
+                "Max Level": character["Max Level"],
+                "Primary Stat": character["Primary Stat"],
+                "Secondary Stat": character["Secondary Stat"],
+                "Play Time": character["Play Time"],
+                "File Path": character["File path"]
+            }));
 
             if (tableData.length > 0) {
                 currentSortColumn = Object.keys(tableData[0])[0]; // Dynamically set the initial sort column

@@ -1,0 +1,452 @@
+[
+    {
+        "Name": "duffry",
+        "Min Level": 39,
+        "Max Level": 39,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "07:25:54",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Duffinci",
+        "Min Level": 62,
+        "Max Level": 62,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Mind",
+        "Play Time": "45:53:38",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Duff",
+        "Min Level": 41,
+        "Max Level": 70,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "16:51:31",
+        "File path": "-- Dated > 2023-08-16"
+    },
+    {
+        "Name": "Unga B. Johnson",
+        "Min Level": 53,
+        "Max Level": 58,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "12:59:16",
+        "File path": "-- Dated > 2023-01-14_02"
+    },
+    {
+        "Name": "Duffile",
+        "Min Level": 180,
+        "Max Level": 183,
+        "Primary Stat": "Arcane",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "219:23:24",
+        "File path": "Daggers > NG+ CFA"
+    },
+    {
+        "Name": "Duffruki",
+        "Min Level": 59,
+        "Max Level": 100,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Vigor",
+        "Play Time": "35:01:02",
+        "File path": "Daggers > NG+ CFA"
+    },
+    {
+        "Name": "Perrin",
+        "Min Level": 36,
+        "Max Level": 36,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "02:06:13",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Duffine",
+        "Min Level": 47,
+        "Max Level": 47,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Strength",
+        "Play Time": "12:35:50",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Krueger",
+        "Min Level": 55,
+        "Max Level": 55,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Endurance",
+        "Play Time": "22:07:48",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Buryn",
+        "Min Level": 42,
+        "Max Level": 42,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "11:47:40",
+        "File path": "- Main > Duffile > 180"
+    },
+    {
+        "Name": "Ken",
+        "Min Level": 12,
+        "Max Level": 183,
+        "Primary Stat": "Faith",
+        "Secondary Stat": "Intelligence",
+        "Play Time": "218:54:22",
+        "File path": "- Main > Ken"
+    },
+    {
+        "Name": "Bonkers",
+        "Min Level": 38,
+        "Max Level": 38,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "02:10:59",
+        "File path": "-- Dated > 2023-01-14"
+    },
+    {
+        "Name": "Sterling",
+        "Min Level": 9,
+        "Max Level": 9,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Endurance",
+        "Play Time": "00:31:48",
+        "File path": "-- Dated > 2023-01-22"
+    },
+    {
+        "Name": "Dutchess",
+        "Min Level": 37,
+        "Max Level": 53,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "13:30:09",
+        "File path": "Archer > 53"
+    },
+    {
+        "Name": "D'bum",
+        "Min Level": 39,
+        "Max Level": 42,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "04:15:12",
+        "File path": "Dbum > 42a"
+    },
+    {
+        "Name": "Maxson",
+        "Min Level": 13,
+        "Max Level": 133,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "32:27:02",
+        "File path": "-- Dated > 2023-06-17"
+    },
+    {
+        "Name": "Sahar",
+        "Min Level": 68,
+        "Max Level": 68,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "13:50:05",
+        "File path": "-- Dated > 2023-03-14"
+    },
+    {
+        "Name": "Rick",
+        "Min Level": 65,
+        "Max Level": 136,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "43:53:56",
+        "File path": "-- Dated > 2023-08-28"
+    },
+    {
+        "Name": "Shen-jon",
+        "Min Level": 23,
+        "Max Level": 39,
+        "Primary Stat": "Faith",
+        "Secondary Stat": "Vigor",
+        "Play Time": "07:28:10",
+        "File path": "-- Dated > 2023-06-17"
+    },
+    {
+        "Name": "Doug",
+        "Min Level": 59,
+        "Max Level": 93,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "19:13:17",
+        "File path": "-- Dated > 2023-03-14"
+    },
+    {
+        "Name": "Dom",
+        "Min Level": 50,
+        "Max Level": 50,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "07:14:00",
+        "File path": "-- Dated > 2023-03-14"
+    },
+    {
+        "Name": "Balls of Iron",
+        "Min Level": 9,
+        "Max Level": 9,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Endurance",
+        "Play Time": "01:28:49",
+        "File path": "-- Dated > 2023-03-14"
+    },
+    {
+        "Name": "Practice",
+        "Min Level": 9,
+        "Max Level": 9,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Endurance",
+        "Play Time": "00:17:37",
+        "File path": "-- Dated > 2023-03-14"
+    },
+    {
+        "Name": "Estoc Ice & Fire",
+        "Min Level": 9,
+        "Max Level": 21,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "01:50:20",
+        "File path": "Estoc Ice & Fire > 20230303"
+    },
+    {
+        "Name": "Cypher",
+        "Min Level": 54,
+        "Max Level": 54,
+        "Primary Stat": "Faith",
+        "Secondary Stat": "Vigor",
+        "Play Time": "05:27:12",
+        "File path": "-- Dated > 2023-06-17"
+    },
+    {
+        "Name": "Spearticus",
+        "Min Level": 30,
+        "Max Level": 30,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "01:54:55",
+        "File path": "-- Dated > 2023-08-28"
+    },
+    {
+        "Name": "Ilithra",
+        "Min Level": 72,
+        "Max Level": 72,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Vigor",
+        "Play Time": "16:34:55",
+        "File path": "-- Dated > 2023-08-28"
+    },
+    {
+        "Name": "WL0",
+        "Min Level": 14,
+        "Max Level": 14,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "00:23:25",
+        "File path": "-- Dated > 2023-08-28"
+    },
+    {
+        "Name": "Zeal",
+        "Min Level": 48,
+        "Max Level": 48,
+        "Primary Stat": "Faith",
+        "Secondary Stat": "Vigor",
+        "Play Time": "06:13:39",
+        "File path": "-- Dated > 2023-10-07_PreRandomiser"
+    },
+    {
+        "Name": "Fanks",
+        "Min Level": 65,
+        "Max Level": 65,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "07:38:58",
+        "File path": "-- Dated > 2023-10-07_PreRandomiser"
+    },
+    {
+        "Name": "Slab",
+        "Min Level": 34,
+        "Max Level": 34,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "01:39:48",
+        "File path": "-- Dated > 2023-11-18"
+    },
+    {
+        "Name": "Randomiser 01",
+        "Min Level": 61,
+        "Max Level": 61,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "08:17:46",
+        "File path": "-- Dated > 2023-11-18"
+    },
+    {
+        "Name": "Lilleth",
+        "Min Level": 45,
+        "Max Level": 45,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Vigor",
+        "Play Time": "03:58:27",
+        "File path": "-- Dated > 2024-01-07"
+    },
+    {
+        "Name": "M'Turik",
+        "Min Level": 60,
+        "Max Level": 60,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "06:38:57",
+        "File path": "-- Dated > 2024-01-07"
+    },
+    {
+        "Name": "Sam",
+        "Min Level": 9,
+        "Max Level": 31,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "01:15:19",
+        "File path": "-- Dated > 2024-01-07"
+    },
+    {
+        "Name": "Meera",
+        "Min Level": 60,
+        "Max Level": 60,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "10:25:39",
+        "File path": "-- Dated > 2024-03-02"
+    },
+    {
+        "Name": "Andariel",
+        "Min Level": 14,
+        "Max Level": 14,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Arcane",
+        "Play Time": "00:50:38",
+        "File path": "-- Dated > 2024-03-02"
+    },
+    {
+        "Name": "Faroth",
+        "Min Level": 9,
+        "Max Level": 9,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "00:16:07",
+        "File path": "Archer > 53"
+    },
+    {
+        "Name": "Con",
+        "Min Level": 10,
+        "Max Level": 10,
+        "Primary Stat": "Faith",
+        "Secondary Stat": "Mind",
+        "Play Time": "00:25:50",
+        "File path": "Bandi > 67"
+    },
+    {
+        "Name": "Bandi",
+        "Min Level": 67,
+        "Max Level": 67,
+        "Primary Stat": "Arcane",
+        "Secondary Stat": "Vigor",
+        "Play Time": "20:08:10",
+        "File path": "Bandi > 67"
+    },
+    {
+        "Name": "Gem",
+        "Min Level": 8,
+        "Max Level": 111,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "19:51:57",
+        "File path": "Bandi > 67"
+    },
+    {
+        "Name": "Faiya",
+        "Min Level": 32,
+        "Max Level": 41,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "06:08:55",
+        "File path": "Devourer > 20230303"
+    },
+    {
+        "Name": "Tarth",
+        "Min Level": 46,
+        "Max Level": 51,
+        "Primary Stat": "Strength",
+        "Secondary Stat": "Vigor",
+        "Play Time": "10:20:01",
+        "File path": "Tarth > 49ish - Cross Naginata"
+    },
+    {
+        "Name": "Fayth",
+        "Min Level": 27,
+        "Max Level": 27,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Mind",
+        "Play Time": "01:14:02",
+        "File path": "Fayth > 27"
+    },
+    {
+        "Name": "Johan",
+        "Min Level": 10,
+        "Max Level": 10,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "01:34:18",
+        "File path": "Gem > 108"
+    },
+    {
+        "Name": "D",
+        "Min Level": 16,
+        "Max Level": 16,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Dexterity",
+        "Play Time": "01:13:13",
+        "File path": "Gem > 111"
+    },
+    {
+        "Name": "Sultan",
+        "Min Level": 42,
+        "Max Level": 59,
+        "Primary Stat": "Intelligence",
+        "Secondary Stat": "Vigor",
+        "Play Time": "11:31:43",
+        "File path": "Gem > 111"
+    },
+    {
+        "Name": "Santini",
+        "Min Level": 70,
+        "Max Level": 98,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "20:10:36",
+        "File path": "Santini > 20240222"
+    },
+    {
+        "Name": "Stormhawk",
+        "Min Level": 53,
+        "Max Level": 59,
+        "Primary Stat": "Vigor",
+        "Secondary Stat": "Strength",
+        "Play Time": "05:51:27",
+        "File path": "Stormhawk > 20231119"
+    },
+    {
+        "Name": "Thrusting Demo",
+        "Min Level": 183,
+        "Max Level": 183,
+        "Primary Stat": "Dexterity",
+        "Secondary Stat": "Vigor",
+        "Play Time": "220:32:28",
+        "File path": "Thrusting Sword > NG+ CFA > 2x Estoc"
+    }
+]
