@@ -3,27 +3,59 @@ let currentSortColumn = ""; // To be set dynamically based on data
 let currentSortOrder = "asc"; // Default sort order remains the same
 let globalData = []; // Global variable to store the table data for sorting
 
+// Function to parse query parameters
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
 function fetchDataAndDisplay() {
-    fetch('character_list.json')
-        .then(response => response.json())
-        .then(data => {
-            const tableData = data.map(character => ({
-                "Name": character.Name,
-                "Min Level": character["Min Level"],
-                "Max Level": character["Max Level"],
-                "Primary Stat": character["Primary Stat"],
-                "Secondary Stat": character["Secondary Stat"],
-                "Play Time": character["Play Time"],
-                "File Path": character["File path"]
-            }));
+    const name = getQueryParam('name');
+    if (name) {
+        // If name parameter is present, fetch structured_data.json
+        fetch('structured_data.json')
+            .then(response => response.json())
+            .then(data => {
+                const characterData = data[name] ? data[name] : [];
+                const tableData = characterData.map(character => ({
+                    "File path": shorten_filepath_string(character.file_path.replace(/\\/g, " > ")),
+                    "Level": character.level,
+                    "Vigor": character.stats.Vigor,
+                    "Mind": character.stats.Mind,
+                    "Endurance": character.stats.Endurance,
+                    "Strength": character.stats.Strength,
+                    "Dexterity": character.stats.Dexterity,
+                    "Intelligence": character.stats.Intelligence,
+                    "Faith": character.stats.Faith,
+                    "Arcane": character.stats.Arcane,
+                    "Play time": character.play_time
+                }));
+                globalData = tableData;
+                sortAndDisplayData(); // Initial sort and display
+            });
+    } else {
+        // Default fetch from character_list.json
+        fetch('character_list.json')
+            .then(response => response.json())
+            .then(data => {
+                const tableData = data.map(character => ({
+                    "Name": character.Name,
+                    "Min Level": character["Min Level"],
+                    "Max Level": character["Max Level"],
+                    "Primary Stat": character["Primary Stat"],
+                    "Secondary Stat": character["Secondary Stat"],
+                    "Play Time": character["Play Time"],
+                    "File Path": character["File path"]
+                }));
 
-            if (tableData.length > 0) {
-                currentSortColumn = Object.keys(tableData[0])[0]; // Dynamically set the initial sort column
-            }
+                if (tableData.length > 0) {
+                    currentSortColumn = Object.keys(tableData[0])[0]; // Dynamically set the initial sort column
+                }
 
-            globalData = tableData;
-            sortAndDisplayData(); // Initial sort and display
-        });
+                globalData = tableData;
+                sortAndDisplayData(); // Initial sort and display
+            });
+    }
 }
 
 function shorten_filepath_string(filePath){
@@ -66,9 +98,18 @@ function displayDynamicTable(data) {
     // Create rows for each object in the data
     data.forEach(item => {
         const row = document.createElement('tr');
-        Object.keys(data[0]).forEach(key => {
+        Object.keys(item).forEach(key => {
             const td = document.createElement('td');
-            td.textContent = item[key];
+            if (key === "Name") { // Check if the column is "Name"
+                const a = document.createElement('a');
+                const url = new URL(window.location.href);
+                url.searchParams.set('name', item[key]); // Set 'name' query parameter
+                a.href = url; // Set href to the URL with the query parameter
+                a.textContent = item[key];
+                td.appendChild(a);
+            } else {
+                td.textContent = item[key];
+            }
             row.appendChild(td);
         });
         tbody.appendChild(row);
@@ -105,4 +146,22 @@ function sortAndDisplayData(sortColumn = currentSortColumn) {
     displayDynamicTable(sortedData);
 }
 
-document.addEventListener('DOMContentLoaded', fetchDataAndDisplay);
+document.addEventListener('DOMContentLoaded', () => {
+    const name = getQueryParam('name');
+    const titleContainer = document.getElementById('titleContainer'); // Assuming an element with this ID exists for the title
+    const returnLink = document.createElement('a');
+    returnLink.href = 'https://duffry.com/EldenRing/'; // Set to your base URL
+    returnLink.textContent = '< Return to character list';
+    returnLink.style = 'margin-left: 20px;'; // Add some spacing
+
+    if (name) {
+        // If a character name is specified in the URL
+        titleContainer.innerHTML = `${name}`; // Set the title to the character's name
+        titleContainer.appendChild(returnLink); // Add the return link next to the title
+    } else {
+        // Default view (no specific character selected)
+        titleContainer.textContent = 'Character list'; // Set the title for the character list page
+    }
+
+    fetchDataAndDisplay();
+});

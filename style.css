@@ -1,14 +1,45 @@
+body {
+    background-color: #333; /* Dark grey background */
+    color: white; /* White text color */
+    font-family: sans-serif; /* General sans-serif font */
+}
+
+a {
+    color: #FFA500; /* Orange gold color for links */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover for better visibility */
+}
+
+#titleContainer {
+    font-size: 32px; /* Large font size for title */
+    padding: 10px;
+}
+
+#titleContainer a {
+    font-size: 16px; /* Smaller font size for links in the title */
+    font-style: italic; /* Italicize links in the title */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid #ccc; /* Light grey table borders */
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc; /* Light grey borders for table cells */
     padding: 8px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #222;
+    color: white; /* Ensuring header text is black for contrast */
+}
+
+tr:hover {
+    background-color: #555; /* Lighter grey on hover for table rows */
 }
